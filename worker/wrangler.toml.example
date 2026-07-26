@@ -1,0 +1,14 @@
+name = "kumovi-debili-orders"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+
+[[r2_buckets]]
+binding = "DESIGNS"
+bucket_name = "kumovi-debili-designs"
+
+[vars]
+TEST_MODE = "true"
+ALLOWED_ORIGIN = "https://vas-domen.rs"
+ORDER_EMAIL = "porudzbine@vas-domen.rs"
+# EMAIL_API_URL se dodaje kao varijabla.
+# EMAIL_API_KEY se dodaje isključivo kao secret, nikada u ovaj fajl.

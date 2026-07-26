@@ -1,0 +1,18 @@
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function esc(v=""){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function header(){
+return `<a class="skip" href="#main">Preskoči na sadržaj</a><div class="topbar">Cene, dostupnost i rok izrade potvrđujemo nakon upita.</div><header class="header"><nav class="nav" aria-label="Glavna navigacija"><a class="logo" href="index.html">Kumovi Debili</a><button class="menu-btn" aria-label="Otvori meni">Meni</button><div class="links"><a href="shop.html">Proizvodi</a><a href="packages.html">Paketi</a><a href="index.html#kako">Kako funkcioniše</a><a href="index.html#faq">FAQ</a><a href="contact.html">Kontakt</a><a class="cart-link" href="cart.html">Korpa <span class="cart-count">0</span></a></div></nav></header>`}
+function footer(){
+return `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="logo" href="index.html">Kumovi Debili</a><p>Sve za momačko veče koje se pamti. Vi smislite glupost, mi je odštampamo.</p></div><div><h3>Brzi linkovi</h3><a href="shop.html">Proizvodi</a><a href="packages.html">Paketi za ekipu</a><a href="cart.html">Korpa</a></div><div><h3>Važno</h3><a href="privacy.html">Privatnost</a><a href="terms.html">Uslovi poručivanja</a><a href="contact.html">Kontakt</a></div></div><div class="legal-note">© 2026 Kumovi Debili. Početna verzija sajta. Bez online plaćanja — svaka porudžbina se potvrđuje direktno.</div></div></footer>`}
+function productCard(p){return `<article class="card"><a class="product-media" href="product.html?id=${encodeURIComponent(p.id)}">${p.image?`<img src="${p.image}" alt="${esc(p.name)}" loading="lazy">`:`<div class="scribble">Fotografija<br>uskoro</div>`}<span class="tag">${p.verified?"Proveren model":"Za potvrdu"}</span></a><div class="card-body"><div class="meta">${esc(p.category)} · ${esc(p.model)}</div><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="price">${esc(p.price)}</div><a class="btn alt" href="product.html?id=${encodeURIComponent(p.id)}">Personalizuj →</a></div></article>`}
+function packageCard(p){return `<article class="package"><div class="kicker">${esc(p.kicker)}</div><h3>${esc(p.name)}</h3><ul>${p.items.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><a class="btn" href="product.html?package=${encodeURIComponent(p.id)}">Složi paket →</a></article>`}
+function updateCount(){const n=window.KDCart?KDCart.read().reduce((s,x)=>s+(Number(x.qty)||1),0):0;$$(".cart-count").forEach(e=>e.textContent=n)}
+document.addEventListener("DOMContentLoaded",()=>{
+  const h=$("#site-header"),f=$("#site-footer");if(h)h.innerHTML=header();if(f)f.innerHTML=footer();
+  $(".menu-btn")?.addEventListener("click",()=>$(".links")?.classList.toggle("open"));
+  updateCount();window.addEventListener("kd-cart",updateCount);
+  const pg=$("#product-grid");if(pg)pg.innerHTML=KD_PRODUCTS.map(productCard).join("");
+  const featured=$("#featured-grid");if(featured)featured.innerHTML=KD_PRODUCTS.slice(0,4).map(productCard).join("");
+  const pack=$("#package-grid");if(pack)pack.innerHTML=KD_PACKAGES.map(packageCard).join("");
+  const search=$("#shop-search");if(search)search.addEventListener("input",()=>{const q=search.value.toLowerCase();pg.innerHTML=KD_PRODUCTS.filter(p=>(p.name+" "+p.category+" "+p.model).toLowerCase().includes(q)).map(productCard).join("")});
+});
