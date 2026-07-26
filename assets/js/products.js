@@ -7,7 +7,7 @@ window.KD_PRODUCTS=[
 {id:"arlo",name:"Kačket",category:"Tekstil",desc:"Čuva glavu od sunca, ali ne i od loših ideja.",image:"https://apiv2.promosolution.services/content/ModelItem/54032_000.webp",colors:["Crna","Bela","Plava","Crvena","Zelena","Bež","Siva"],sizes:[],positions:["Napred","Sa strane"],price:"TRI PRASETA GROK"},
 {id:"sonder",name:"Otvarač",category:"Dodaci",desc:"Mali predmet sa najvećom odgovornošću u ekipi.",image:"https://apiv2.promosolution.services/content/ModelItem/32363_000.webp",colors:["Crna","Bela","Plava","Crvena"],sizes:[],positions:["Prednja strana"],price:"TRI PRASETA GROK"},
 {id:"adler",name:"Boca",category:"Piće",desc:"Hidratacija za one koji se sete na vreme.",image:"https://apiv2.promosolution.services/content/ModelItem/41254_000.webp",colors:["Maslinasta","Plava","Bela","Crna"],sizes:[],positions:["Prednja strana"],price:"TRI PRASETA GROK"},
-{id:"rashladna-torba",name:"Rashladna torba",category:"Letnji program",desc:"Piće ostaje hladno čak i kad se ekipa usija.",image:"",colors:["Crna","Plava","Crvena"],sizes:[],positions:["Prednja strana"],price:"TRI PRASETA GROK"}
+{id:"rashladna-torba",name:"Rashladna torba",category:"Letnji program",desc:"Piće ostaje hladno čak i kad se ekipa usija.",image:"assets/images/rashladna-torba.png",colors:["Crna"],sizes:[],positions:["Prednja strana"],price:"TRI PRASETA GROK"}
 ];
 
 window.KD_PACKAGES=[
