@@ -1,4 +1,4 @@
-# Kumovi Debili — početna verzija
+﻿# Kumovi Debili — početna verzija
 
 Samostalan responsive sajt i mala prodavnica u čistom HTML-u, CSS-u i JavaScriptu.
 
@@ -14,7 +14,7 @@ Zatim otvorite `http://localhost:8080`.
 
 ## Gde se menjaju proizvodi
 
-Svi nazivi, opisi, modeli, fotografije, boje i oznake cena nalaze se u `assets/js/products.js`. Model majice i rashladne torbe su namerno označeni za naknadnu potvrdu. Prodajne cene nisu izmišljene; svuda je prikazano „Cena na upit“.
+Svi nazivi, opisi, modeli, fotografije, boje i oznake cena nalaze se u `assets/js/products.js`. Model majice i rashladne torbe su namerno označeni za naknadnu potvrdu. Prodajne cene nisu izmišljene; svuda je prikazano „TRI PRASETA GROK“.
 
 Fotografije i podaci za TASOS 56.023, PIGNA MAXI 44.185.91, CALABRIA 34.730, ARLO 54.032, SONDER 32.363 i ADLER 41.254 preuzeti su iz postojećeg DemoShop kataloga.
 
@@ -48,6 +48,7 @@ Nikakve lozinke ni API ključevi ne pripadaju frontend kodu.
 
 - uneti poslovni email, telefon, adresu i podatke firme;
 - potvrditi tačan model majice i rashladne torbe;
-- uneti stvarne prodajne cene ili zadržati sistem „Cena na upit“;
+- uneti stvarne prodajne cene ili zadržati sistem „TRI PRASETA GROK“;
 - pravno pregledati politiku privatnosti i uslove poručivanja;
 - proveriti dozvole za korišćenje fotografija iz DemoShop kataloga.
+
