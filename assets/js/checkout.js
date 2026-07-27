@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded",async()=>{
   const items=KDCart.read();
   const list=$("#checkout-items");
   const form=$("#checkout-form");
@@ -8,6 +8,15 @@ document.addEventListener("DOMContentLoaded",()=>{
   list.innerHTML=items.length
     ?items.map(x=>`<p><strong>${esc(x.name)}</strong><br><small>${x.qty} × ${esc(x.color)}${x.file?` · ${esc(x.file.name)}`:""}</small></p>`).join("")
     :`<p>Korpa je prazna.</p>`;
+
+  const savedFiles=(await Promise.all(items.filter(x=>x.file?.id).map(x=>KDFileStore.get(x.file.id)))).filter(Boolean);
+  if(savedFiles.length){
+    const transfer=new DataTransfer();
+    savedFiles.forEach(file=>transfer.items.add(file));
+    $("#order-files").files=transfer.files;
+    const fileNote=$("#order-files").closest(".upload").querySelector("small");
+    fileNote.textContent=`Automatski preneto iz korpe: ${savedFiles.map(file=>file.name).join(", ")}. Ovde možete dodati ili zameniti fajlove.`;
+  }
 
   form.addEventListener("submit",e=>{
     e.preventDefault();
