@@ -7,11 +7,10 @@ window.KD_PRODUCTS=[
 {id:"arlo",name:"Kačket",category:"Tekstil",desc:"Čuva glavu od sunca, ali ne i od loših ideja.",image:"assets/images/kacket-crna.png",colorImages:{"Crna":"assets/images/kacket-crna.png","Bela":"assets/images/kacket-bela.png","Plava":"assets/images/kacket-plava.png","Crvena":"assets/images/kacket-crvena.png","Zelena":"assets/images/kacket-zelena.png","Bež":"assets/images/kacket-bez.png","Siva":"assets/images/kacket-siva.png"},colors:["Crna","Bela","Plava","Crvena","Zelena","Bež","Siva"],sizes:[],positions:["Napred","Sa strane"],price:"TRI PRASETA GROK"},
 {id:"sonder",name:"Otvarač",category:"Dodaci",desc:"Mali predmet sa najvećom odgovornošću u ekipi.",image:"assets/images/otvarac-original.webp",colorImages:{"Bela":"assets/images/otvarac-original.webp","Crna":"assets/images/otvarac-crna.png","Plava":"assets/images/otvarac-plava.png","Crvena":"assets/images/otvarac-crvena.png"},colors:["Bela","Crna","Plava","Crvena"],sizes:[],positions:["Prednja strana"],price:"TRI PRASETA GROK"},
 {id:"adler",name:"Boca",category:"Piće",desc:"Hidratacija za one koji se sete na vreme.",image:"assets/images/boca-maslinasta.png",colorImages:{"Maslinasta":"assets/images/boca-maslinasta.png","Plava":"assets/images/boca-plava.png","Bela":"assets/images/boca-bela.png","Crna":"assets/images/boca-crna.png"},colors:["Maslinasta","Plava","Bela","Crna"],sizes:[],positions:["Prednja strana"],price:"TRI PRASETA GROK"},
-{id:"casice",name:"Čašice za rakiju",category:"Piće",desc:"Male čašice za velike zdravice i još veće priče sutradan.",image:"assets/images/casice-srebrne.webp",colorImages:{"Srebrna":"assets/images/casice-srebrne.webp","Crna":"assets/images/casice-crne.webp"},colors:["Srebrna","Crna"],sizes:[],positions:["Na pljosci","Na kutiji"],price:"TRI PRASETA GROK"}
 ];
 
 window.KD_PACKAGES=[
 {id:"osnovni",name:"Osnovni debili",kicker:"Za kratko i jako",items:["Majica","Kačket","Otvarač"]},
-{id:"morski",name:"Morski debili",kicker:"Letnji paket",items:["Majica","Peškir","Čašice za rakiju","Boca"]},
+{id:"morski",name:"Morski debili",kicker:"Letnji paket",items:["Majica","Peškir","Boca"]},
 {id:"kompletni",name:"Kompletni debili",kicker:"Bez polovičnih mera",items:["Majica","Peškir","Kačket","Krigla","Torba","Otvarač","Boca"]}
 ];

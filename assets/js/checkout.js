@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
     const totalFileSize=files.reduce((sum,file)=>sum+file.size,0);
     const allowedTypes=new Set(["image/jpeg","image/png","application/pdf","image/svg+xml"]);
     if(files.some(file=>!allowedTypes.has(file.type))||totalFileSize>10*1024*1024){
-      msg.innerHTML=`<div class="error-msg">Fajlovi moraju biti JPG, PNG, PDF ili SVG i ukupno manji od 10 MB.</div>`;
+msg.innerHTML=`<div class="error-msg">Fajlovi moraju biti JPG/JPEG, PNG, PDF ili SVG i ukupno manji od 10 MB.</div>`;
       return;
     }
 
