@@ -1,4 +1,9 @@
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+if("scrollRestoration" in history)history.scrollRestoration="manual";
+window.addEventListener("load",()=>{
+  const navigation=performance.getEntriesByType("navigation")[0];
+  if(navigation?.type==="reload"&&!location.hash)window.scrollTo({top:0,left:0,behavior:"instant"});
+});
 function esc(v=""){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
 function header(){
 return `<a class="skip" href="#main">Preskoči na sadržaj</a><div class="topbar">Cene, dostupnost i rok izrade potvrđujemo nakon upita.</div><header class="header"><nav class="nav" aria-label="Glavna navigacija"><a class="logo logo-image" href="index.html" aria-label="Kumovi Debili — početna"><img src="assets/images/logo-kumovi-debili.jpg" alt="Kumovi Debili"></a><button class="menu-btn" aria-label="Otvori meni">Meni</button><div class="links"><a href="shop.html">Proizvodi</a><a href="packages.html">Paketi</a><a href="index.html#kako">Kako funkcioniše</a><a href="index.html#faq">FAQ</a><a href="contact.html">Kontakt</a><a class="instagram-link" href="https://www.instagram.com/kumovidebili/" target="_blank" rel="noopener noreferrer">Instagram</a><a class="cart-link" href="cart.html">Korpa <span class="cart-count">0</span></a></div></nav></header>`}
